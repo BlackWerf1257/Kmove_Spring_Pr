@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}"></title>
+    <style>
+        body {
+            background-image: url('https://images.pexels.com/photos/53594/blue-clouds-day-fluffy-53594.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+            background-size: cover;
+            background-position: center;
+            font-family: 'Arial', sans-serif;
+        }
+    </style>
+	
+	
+	
+</head>
+<body>
+	<div class="signup-container">
+	        <form th:if="${!isLogin}" th:action="${action}" method="POST">
+				<link rel="stylesheet" href="css/register.css">
+	            <h1>ID와 비밀번호를 입력해주세요</h1>
+	            <h2 th:text="${title}"></h2>
+				<div class="form-group">
+					<label for="username">ID</label>
+					<input type="text" id="uid" name="userid" required>
+					            </div>
+	            <div class="form-group">
+	                <label for="email">이메일</label>
+	                <input type="email" id="email" name="email" required>
+	            </div>
+				<div class="form-group">
+					<label for="password">비밀번호</label>
+					<input type="password" id="upw" name="userpw" required>
+				</div>
+	            <button type="submit">가입하기</button>
+	        </form>
+	    </div>
+    
+    <div class="login-container" >
+        <form th:if="${isLogin}" th:action="${action}" method="POST">
+			<link rel="stylesheet" href="css/login.css">
+            <h1>ID와 비밀번호를 입력해주세요</h1>
+            <div class="form-group">
+                <label for="username">ID</label>
+                <input type="text" id="uid" name="userid" required>
+            </div>
+            <div class="form-group">
+                <label for="password">비밀번호</label>
+                <input type="password" id="upw" name="userpw" required>
+            </div>
+            <button type="submit">로그인</button>
+        </form>
+    </div>
+</body>
+</html>

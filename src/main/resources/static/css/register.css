@@ -1,0 +1,103 @@
+/* 기본적인 리셋 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f4f8;
+    color: #333;
+    padding: 20px; /* 여백 추가 */
+}
+
+
+
+/* 회원가입 컨테이너 */
+.signup-container {
+    background-color: #fff;
+    padding: 40px; /* 내부 여백 확대 */
+    border-radius: 10px;
+    box-shadow: none; /* 그림자 제거 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 500px; /* 최대 너비 확대 */
+    width: 100%;
+}
+
+
+/* 제목 스타일 */
+.signup-container h1 {
+    font-size: 28px; /* 글씨 크기 확대 */
+    font-weight: 600;
+    margin-bottom: 50px; /* 아래 여백 추가 */
+    text-align: center;
+    color: #333;
+}
+
+.signup-container h2 {
+    font-size: 30px; /* 글씨 크기 확대 */
+    font-weight: 400;
+    margin-bottom: 40px; /* 아래 여백 추가 */
+    text-align: center;
+    color: #555;
+}
+
+/* 폼 그룹 스타일 */
+.form-group {
+    margin-bottom: 25px; /* 폼 그룹 간의 간격 확대 */
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px; /* 레이블과 입력 필드 간의 간격 확대 */
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 15px; /* 입력 필드 내부 여백 확대 */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+
+
+/* 버튼 스타일 */
+button {
+    width: 100%;
+    padding: 15px; /* 버튼 내부 여백 확대 */
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px; /* 글씨 크기 확대 */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:focus {
+    outline: none;
+    background-color: #004080;
+}

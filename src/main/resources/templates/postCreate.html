@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:value="${userid}"></title>
+    <link rel="stylesheet" href="css/postCreate.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>글 작성</h1>
+        </header>
+        <main>
+            <form action="/PostCreate" method="post">
+				<!--th:text="${userId}-->
+				<input type="hidden" name="userid" th:value="${userId}">
+                <label for="title">제목</label>
+                <input type="text" id="title" name="title" required>
+                
+                <label for="content">내용</label>
+                <textarea id="content" name="postValue" rows="100" required></textarea>
+                
+                <button type="submit">제출</button>
+            </form>
+        </main>
+    </div>
+</body>
+</html>

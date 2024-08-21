@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 성공</title>
+    <style>
+        body {
+			background-image: url('https://images.pexels.com/photos/53594/blue-clouds-day-fluffy-53594.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+			background-size: cover;
+			background-position: center;
+			font-family: 'Arial', sans-serif;
+			
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px; /* 버튼 간의 간격을 20px로 설정 */
+        }
+
+        .action-button {
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+            width: 45%;
+        }
+
+        .action-button:active {
+            background-color: #004494;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>로그인 성공!</h1>
+        <p>이제 메인 화면으로 돌아갈 수 있습니다.</p>
+        <div class="button-container">
+            <a href="/" class="action-button">메인 화면</a>
+			<a href="/main" class="action-button">사이트로 이동하기</a>
+        </div>
+    </div>
+</body>
+</html>

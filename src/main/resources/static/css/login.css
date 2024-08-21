@@ -1,0 +1,97 @@
+/* 기본적인 리셋 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5; /* 부드러운 배경색 */
+}
+
+/* 로그인 컨테이너 스타일 */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px; /* 모서리 둥글게 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+    text-align: center; /* 가운데 정렬 */
+}
+
+h1 {
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+/* 폼 그룹 스타일 */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left; /* 레이블을 왼쪽으로 정렬 */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555555;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dcdcdc; /* 연한 회색 테두리 */
+    border-radius: 6px; /* 테두리 둥글게 */
+    font-size: 16px;
+    color: #333333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #007bff; /* 파란색 테두리 */
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.2); /* 파란색 그림자 */
+    outline: none;
+}
+
+/* 버튼 스타일 */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff; /* 파란색 배경 */
+    border: none;
+    border-radius: 6px; /* 테두리 둥글게 */
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* 어두운 파란색 배경 */
+}
+
+/* 반응형 디자인 */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .form-group input {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}

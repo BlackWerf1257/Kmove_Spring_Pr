@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포스트 업로드 실패</title>
+    <style>
+        body {
+			background-image: url('https://images.pexels.com/photos/53594/blue-clouds-day-fluffy-53594.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+			background-size: cover;
+			background-position: center;
+			font-family: 'Arial', sans-serif;
+			
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .container p {
+            font-size: 18px;
+            margin: 15px 0;
+        }
+
+        .register-button {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .register-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+        }
+
+        .register-button:active {
+            background-color: #004494;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>포스트 업로드에 실패했습니다</p>
+        <p>재시도 하시겠습니까?</p>
+        <a href="newPost" class="reWrite-button">글 작성</a>
+		<a href="main" class="return-button">게시판으로 돌아가기</a>
+    </div>
+</body>
+</html>
