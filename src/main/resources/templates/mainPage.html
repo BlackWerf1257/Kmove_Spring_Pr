@@ -74,16 +74,20 @@
 	<div class="container">
     <h1>Post List</h1>
 	<h2 ></h2>
-	<a th:href="@{/newPost(userId=${userId})}" class="header-button">포스트 작성</a>
+	<a th:href="@{/newPost(userid=${userid})}" class="header-button">포스트 작성</a>
 	<a th:href="@{/}" class="header-button">로그아웃 하기</a>
 	</div>
-    <div class="container">
-        <ul>
-            <li th:each="post : ${items}">
-                <h2 th:text="${post.title}">Title</h2>
-                <p th:text="${post.postValue}">Content</p>
-            </li>
-        </ul>
-    </div>
+	<div class="container">
+	    <ul>
+	        <li th:each="post : ${items}" style="list-style-type: none; margin-bottom: 1rem;">
+	            <a th:href="@{|/post/${post.id}|}" style="text-decoration: none; color: inherit;">
+	                <div class="post-container">
+	                    <h2 th:text="${post.title}">Title</h2>
+	                    <p th:text="${post.postValue}">Content</p>
+	                </div>
+	            </a>
+	        </li>
+	    </ul>
+	</div>
 </body>
 </html>

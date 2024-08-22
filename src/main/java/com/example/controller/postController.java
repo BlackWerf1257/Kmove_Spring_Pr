@@ -50,12 +50,20 @@ public class postController {
 		m.addAttribute("items", posts);
 		return "mainPage";
 	}
+	@GetMapping(value = "/post/{param}")
+	public String GetPost(@PathVariable("param") String param, Model m) {
+	    EntityPost posts = _repoPost.NativeGetPost(param);
+	    System.out.println("Fetched Posts: " + posts);
+	    m.addAttribute("items", posts);
+	    return "postPage";
+	}
+
 
 
 	
 	@GetMapping(value = "/newPost")
-	public String newPost(@RequestParam(name = "userId", required = true) String id, Model m) {
-		m.addAttribute("userId", id);
+	public String newPost(@RequestParam(name = "userid", required = true) String id, Model m) {
+		m.addAttribute("userid", id);
 		//System.out.println(id);
 		return "/postCreate";
 	}

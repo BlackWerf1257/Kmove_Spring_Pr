@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포스트 제목</title>
+	<link rel="stylesheet" href="css/postStyle.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="/" class="logo">MyWebsite</a>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/main">Posts</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="post-container">
+        <div class="container">
+            <article class="post">
+				<li th:each="post : ${items}">
+                <h1 th:text="${post.title}"></h1>
+				<p th:text="'작성자: ' + ${post.userid}">Content</p>
+                <p th:text="${post.postValue}">Content</p>
+            </article>
+			</li>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 MyWebsite. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

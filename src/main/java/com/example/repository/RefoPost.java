@@ -19,6 +19,12 @@ public interface RefoPost extends CrudRepository<EntityPost, Integer> {
 	List<EntityPost> NativeGetAllPost();
 	@Query(value = "SELECT * FROM Entity_Post WHERE USERID = :userid", nativeQuery = true)
 	List<EntityPost> NativeGetAllMyPost(@Param("userid") String userid);
+	@Query(value = "SELECT * FROM Entity_Post WHERE id = :id", nativeQuery = true)
+	EntityPost NativeGetPost(@Param("id") String id);
+	@Query(value = "DELETE * FROM Entity_Post WHERE id = :id", nativeQuery = true)
+	EntityPost NativeDeletePost(@Param("id") String id);
+	@Query(value = "DELETE * FROM Entity_Post", nativeQuery = true)
+	EntityPost NativeDeleteAllPost();
 
 
 
