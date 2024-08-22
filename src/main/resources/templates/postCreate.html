@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!--!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> 새 포스트 작성 </title>
+    title> 새 포스트 작성 </title>
     <link rel="stylesheet" href="css/postCreate.css">
 </head>
 <body>
@@ -12,8 +12,9 @@
             <h1>글 작성</h1>
         </header>
         <main>
+			<title th:value = "${userId}"></title>
             <form action="/PostCreate" method="post">
-				<!--th:text="${userId}-->
+				th:text="${userId}
 				<input type="hidden" name="userid" th:value="${userId}">
                 <label for="title">제목</label>
                 <input type="text" id="title" name="title" required>
@@ -26,4 +27,82 @@
         </main>
     </div>
 </body>
+</html>-->
+
+
+<!--<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/postStyle.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a href="/" class="logo">MyWebsite</a>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/main">Posts</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="post-container">
+        <div class="container">
+            <article class="post">
+				<li th:each="post : ${items}">
+					<title th:value="${userid}"></title>
+                <h1 th:text="${post.title}"></h1>
+				<p th:value="'작성자: ' + ${userid}">Content</p>
+                <p th:text="${post.postValue}">Content</p>
+            </article>
+			</li>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 MyWebsite. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>-->
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판 글쓰기 폼</title>
+    
+   <link href="css/postStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="form-container">
+        <h1>게시판 글쓰기</h1>
+        <form action="/PostCreate" method="post">
+            <div>
+                <label for="title">제목:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div>
+                <label for="author">작성자:</label>
+                <input th:value="${userid}" type="text" id="author" name="userid" required>
+            </div>
+            <div>
+                <label for="content">내용:</label><br>
+                <textarea id="content" name="postValue" required></textarea>
+            </div>
+            
+            <div>
+                <button type="submit">글 등록</button>
+            </div>
+        </form>
+    </div>
+</body>
 </html>
+

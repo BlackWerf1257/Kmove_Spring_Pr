@@ -23,6 +23,8 @@ import com.example.Entity.EntityPost;
 import com.example.Entity.EntityUser;
 import com.example.repository.RefoPost;
 import com.example.repository.RefoUser;
+
+import jakarta.servlet.http.HttpSession;
 @Controller
 public class postController {	
 	@Autowired
@@ -44,7 +46,9 @@ public class postController {
 	
 	
 	@GetMapping(value = "/main")
-	public String mainPage(Model m) {
+	public String mainPage(Model m, HttpSession session) {
+		EntityUser user = (EntityUser)session.getAttribute("UserInfo");
+		
 		List<EntityPost> posts = _repoPost.NativeGetAllPost();
 	    System.out.println("Fetched Posts: " + posts);
 		m.addAttribute("items", posts);
@@ -62,10 +66,13 @@ public class postController {
 
 	
 	@GetMapping(value = "/newPost")
-	public String newPost(@RequestParam(name = "userid", required = true) String id, Model m) {
-		m.addAttribute("userid", id);
+	public String newPost(@RequestParam(name = "userid", required = true) String id, Model m, HttpSession session) {
+		//m.addAttribute("userid", id);
+		EntityUser user = (EntityUser)session.getAttribute("UserInfo");
+		m.addAttribute("userid", user.getUserid());
+		
 		//System.out.println(id);
-		return "/postCreate";
+		return "postCreate";
 	}
 	@RequestMapping(value = "/PostCreate", method = RequestMethod.POST)
 	public String PostCreate(DTOPost param)

@@ -20,6 +20,8 @@ import com.example.dto.DTOUser;
 import com.example.Entity.EntityUser;
 import com.example.repository.RefoPost;
 import com.example.repository.RefoUser;
+
+import jakarta.servlet.http.HttpSession;
 @Controller
 public class userController {	
 	@Autowired
@@ -89,7 +91,7 @@ public class userController {
 	
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login( DTOUser param, Model m)
+	public String login( DTOUser param, Model m, HttpSession session)
 	{	
 		EntityUser user = _repoUser.NativeUserLogin(param.userid, param.userpw);
 		//EntityUser user = _repoUser.findByUseridAndUserpw(param.userid, param.userpw);
@@ -100,6 +102,7 @@ public class userController {
 		
 		if(user != null)
 		{
+			session.setAttribute("UserInfo", user);
 			m.addAttribute("userId", param.userid);
 			return "redirect:/main";			
 		}
